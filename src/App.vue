@@ -1,30 +1,38 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div class="layout">
+    <Header />
+    <div class="layout__main">
+      <Main />
+    </div>
+    <Footer />
+  </div>
 </template>
+<script>
+import Header from "@/components/Header.vue";
+import Main from "@/components/Main.vue";
+import Footer from "@/components/Footer.vue";
+import SupportForm from "@/components/SupportForm.vue";
+import ModalWindow from "@/components/UI/ModalWindow.vue";
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+export default {
+  components: {
+    Header,
+    Main,
+    Footer,
+    ModalWindow,
+    SupportForm,
+  },
+  data() {
+    return {};
+  },
+  methods: {},
+};
+</script>
+<style lang="sass" scoped>
+.layout
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    &__main
+      flex: 1
 </style>
