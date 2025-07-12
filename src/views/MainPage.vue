@@ -78,25 +78,20 @@
         </p>
       </div>
     </div>
-    <modal-window v-model:show="windowVisible">
-      <SupportForm v-model:show="windowVisible" />
-    </modal-window>
-    <support-element @click="toggleWindow"></support-element>
+    <support-element></support-element>
   </main>
 </template>
 
 <script>
 import TariffComp from "@/components/TariffComp.vue";
-import SupportForm from "@/components/SupportForm";
 
 export default {
   components: {
     TariffComp,
-    SupportForm,
   },
   data() {
+    name: "MainPage";
     return {
-      windowVisible: false,
       tabBarBtn: [
         { id: "1", desription: "Features" },
         { id: "2", desription: "Tech specs" },
@@ -108,9 +103,6 @@ export default {
     setActiveTab(id) {
       this.activeBtn = id;
     },
-    toggleWindow() {
-      this.windowVisible = !this.windowVisible;
-    },
   },
 };
 </script>
@@ -118,8 +110,8 @@ export default {
 <style lang="sass" scoped>
 
 .main
-    position: relative
     padding-bottom: 64px
+    position: relative
     &__breadcrumbs
        display: flex
        flex-direction: row

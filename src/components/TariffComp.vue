@@ -1,13 +1,12 @@
 <template>
   <div class="tariff">
-    <div
-      class="tariff__radio"
-      :class="{ active: selectedTariff === tariff.id }"
-      v-for="tariff in tariffs"
-      :key="tariff.id"
-    >
+    <div class="tariff__radio" v-for="tariff in tariffs" :key="tariff.id">
       <div class="tariff__radio_model">
-        <label :for="tariff.id" class="tariff__radio_label">
+        <label
+          :for="tariff.id"
+          class="tariff__radio_label"
+          :class="{ active: selectedTariff === tariff.id }"
+        >
           <input
             type="radio"
             :id="tariff.id"
@@ -155,14 +154,7 @@ export default {
     width: 100%
     gap: 8px
     &__radio
-        display: flex
-        flex-direction: row
-        width: 100%
-        position: relative
-        border: 1.25px solid #FFFFFF1F
-        padding: 8px 20px
-        border-radius: 12px
-        max-height: 64px
+
         &_input
             position: absolute
             overflow: hidden
@@ -179,15 +171,21 @@ export default {
                 right: 20px
                 border: 1px solid #FFFFFF3D
                 transform: translateY(-50%)
-
         &_model
             width: 100%
         &_label
+            cursor: pointer
+            display: flex
+            height: 100%
+            align-items: center
             display: flex
             flex-direction: row
             width: 100%
-            height: 100%
-            align-items: center
+            position: relative
+            border: 1.25px solid #FFFFFF1F
+            padding: 8px 20px
+            border-radius: 12px
+            max-height: 64px
             &_title
                 font-weight: 700
                 font-size: 20px
@@ -233,4 +231,6 @@ export default {
     color: #FF86A4
 .active
     border: 2px solid $baseColor
+    border-radius: 12px
+    padding: 7.25px 19.25px
 </style>

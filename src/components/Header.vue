@@ -1,7 +1,7 @@
 <template>
   <header class="header">
-    <div class="header__container center">
-      <router-link class="header__logo" to="./">
+    <div class="header__container">
+      <router-link class="header__logo" to="/">
         <svg
           width="36"
           height="36"
